@@ -7,7 +7,7 @@ const createUserController = async (req: Request, res: Response) => {
         const token = req.headers.authorization?.split(" ")[1]
         const currentUser = req.newUser
         
-        const user = await createUserService(req.body, token, currentUser)
+        const user = await createUserService(req.body, currentUser)
         
         return res.status(user.status).json(user.message)
     }

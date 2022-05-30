@@ -31,7 +31,7 @@
    },
    "scripts": {
       "dev": "ts-node-dev src/app.ts",
-      "start": "node build/server.js",
+      "start": "node dist/app.js",
       "typeorm": "typeorm-ts-node-commonjs",
       "build": "tsc"
    }
