@@ -33,6 +33,7 @@
       "dev": "ts-node-dev src/app.ts",
       "start": "node dist/app.js",
       "typeorm": "typeorm-ts-node-commonjs",
-      "build": "tsc"
+      "build": "tsc",
+      "migration:run": "typeorm-ts-node-commonjs migration:run -d ./src/data-source.ts"
    }
 }
