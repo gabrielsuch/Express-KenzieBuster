@@ -1,5 +1,6 @@
 import {DataSource} from "typeorm"
 import dotenv from "dotenv"
+import path from "path"
 
 dotenv.config()
 
@@ -9,8 +10,8 @@ export const AppDataSource = new DataSource({
     url: process.env.DB_URI_DEV,
     ssl: {rejectUnauthorized: false},
 
-    entities: ["src/entities/*.ts"],
-    migrations: ["src/migrations/*.ts"]
+    entities: [path.join(__dirname, "./entities/**/*.{js,ts}")],
+    migrations: [path.join(__dirname, "./migrations/**/*.{js,ts}")]
 })
 
 AppDataSource.initialize()
