@@ -30,8 +30,8 @@
       "typescript": "4.5.2"
    },
    "scripts": {
-      "dev": "ts-node-dev src/app.ts",
-      "start": "node dist/app.js",
+      "dev": "ts-node-dev src/server.ts",
+      "start": "node dist/server.js",
       "typeorm": "typeorm-ts-node-commonjs",
       "build": "tsc",
       "migration:run": "typeorm-ts-node-commonjs migration:run -d ./src/data-source.ts"

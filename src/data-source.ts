@@ -14,11 +14,3 @@ export const AppDataSource = new DataSource({
     entities: [path.join(__dirname, "./entities/**/*.{js,ts}")],
     migrations: [path.join(__dirname, "./migrations/**/*.{js,ts}")]
 })
-
-AppDataSource.initialize()
-.then(() => {
-    console.log("Data Source initialized")
-})
-.catch((err) => {
-    console.error("Error during Data Source initialization", err)
-})
