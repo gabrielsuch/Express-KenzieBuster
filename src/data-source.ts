@@ -10,10 +10,9 @@ export const AppDataSource = new DataSource({
     url: process.env.DB_URI_DEV,
     ssl: {rejectUnauthorized: false},
 
-    entities: [path.join(__dirname, "./entities/*.{js,ts}")],
-    migrations: [path.join(__dirname, "./migrations/*.{js,ts}")],
+    entities: [path.join(__dirname, "./entities/**/*.{js,ts}")],
+    migrations: [path.join(__dirname, "./migrations/**/*.{js,ts}")],
 })
-
 
 AppDataSource.initialize()
 .then(() => {
