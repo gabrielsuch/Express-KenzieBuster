@@ -14,12 +14,16 @@ const createUserService = async (body: IUserCreate, currentUser: IUser) => {
     const userKeys = []
     const wrongKeys = []
 
-    if(currentUser && !currentUser.isAdm) {
-        return {status: 401, message: {error: {
-            name: "JsonWebTokenError",
-            message: "jwt malformed"
-        }}}
+    if(body.isAdm && !currentUser) {
+        return {status: 401, message: {error: "Missing Admin Permission"}}
     }
+
+    // if(currentUser && !currentUser.isAdm) {
+    //     return {status: 401, message: {error: {
+    //         name: "JsonWebTokenError",
+    //         message: "jwt malformed"
+    //     }}}
+    // }
 
     for(let i=0 ; i<allowedKeys.length ; i++) {
         if(allowedKeys.includes(Object.keys(body)[i])) {
